@@ -41,3 +41,32 @@ function updateTile(tile, num) {
         }
     }
 }
+
+// keyup = moment that the user let goes of the key
+// e is the event
+document.addEventListener("keyup", (e) => {
+    if (e.code == "ArrowLeft") {
+        slideLeft();
+    }
+    else if (e.code == "ArrowRight") {
+        slideRight();
+    }
+    else if (e.code == "ArrowUp") {
+        slideUp();
+    }
+    else if (e.code == "ArrowDown") {
+        slideDown();
+    }
+}) 
+
+function slide() {
+    //
+}
+
+function slideLeft() {
+    for (let r = 0; r < rows; r++) {
+        let cur_row = board[r];
+        cur_row = slide(cur_row);
+        board[r] = cur_row;
+    } 
+}
