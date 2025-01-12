@@ -1,6 +1,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+    color: rgb(206, 127, 255);
+    background-color: rgb(54, 8, 81);
 }
 
 #board {
