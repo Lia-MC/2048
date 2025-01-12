@@ -1,0 +1,84 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+#board {
+    width: 400px;
+    height: 400px;
+
+    margin: auto;
+    background-color: rgb(208, 135, 222);
+    border: 5px solid black;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    width: 90px;
+    height: 90px;
+    border: 5px solid blueviolet;
+
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.t2 {
+    background-color: whitesmoke;
+    color: grey;
+}
+
+.t4 {
+    background-color: lightcyan;
+    color: rgb(131, 138, 192);
+}
+
+.t8 {
+    background-color: rgb(202, 197, 242);
+    color: rgb(111, 155, 237);
+}
+
+.t16 {
+    background-color: rgb(238, 196, 244);
+    color: rgb(104, 100, 230);
+}
+
+.t32 {
+    background-color: rgb(225, 174, 247);
+    color: rgb(127, 70, 220);
+}
+
+.t64 {
+    background-color: rgb(216, 136, 235);
+    color: rgb(91, 47, 173);
+}
+
+.t128 {
+    background-color: rgb(255, 139, 234);
+    color: rgb(69, 3, 135);
+}
+
+.t256 {
+    background-color: rgb(241, 93, 217);
+    color: rgb(41, 27, 143);
+}
+
+.t512 {
+    background-color: rgb(211, 57, 242);
+    color: rgb(71, 21, 135);
+}
+
+.t1024 {
+    background-color: rgb(178, 35, 235);
+    color: rgb(35, 1, 94);
+}
+
+.t2048 {
+    background-color: rgb(157, 0, 255);
+    color: black;
+}
