@@ -98,7 +98,7 @@ function slideLeft() {
         board[r] = cur_row;
 
         for (let c = 0; c < cols; c++) {
-            let tile = document.getElementById(r.toString + "-" + c.toString);
+            let tile = document.getElementById(r.toString() + "-" + c.toString());
             let num = board[r][c];
             updateTile(tile, num);
         }
