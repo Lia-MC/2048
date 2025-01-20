@@ -8,18 +8,11 @@ window.onload = function() {
 }
 
 function setGame() {
-    // board = [
-    //     [0, 0, 0, 0],
-    //     [0, 0, 0, 0],
-    //     [0, 0, 0, 0],
-    //     [0, 0, 0, 0]
-    // ]
-
     board = [
-        [4, 4, 2, 2],
-        [4, 4, 0, 0],
-        [0, 8, 8, 0],
-        [16, 16, 16, 16]
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0]
     ]
 
     for (let r = 0; r < rows; r++) {
@@ -29,6 +22,40 @@ function setGame() {
             let num = board[r][c];
             updateTile(tile, num);
             document.getElementById("board").append(tile);
+        }
+    }
+
+    setTwo();
+    setTwo();
+}
+
+function hasEmptyTile() {
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+            if (board[r][c] == 0) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+function setTwo() {
+    if (!hasEmptyTile()) {
+        return;
+    }
+
+    let found = false;
+    while (!found) {
+        let r = Math.floor(Math.random() * rows);
+        let c = Math.floor(Math.random() * cols);
+
+        if (board[r][c] == 0) {
+            board[r][c] = 2;
+            let tile = document.getElementById(r.toString() + "-" + c.toString());
+            tile.innerText = "2";
+            tile.classList.add("x2");
+            found = true;
         }
     }
 }
@@ -54,16 +81,22 @@ function updateTile(tile, num) {
 document.addEventListener("keyup", (e) => {
     if (e.code == "ArrowLeft") {
         slideLeft();
+        setTwo();
     } 
     else if (e.code == "ArrowRight") {
         slideRight();
+        setTwo();
     }
     else if (e.code == "ArrowUp") {
         slideUp();
+        setTwo();
     }
     else if (e.code == "ArrowDown") {
         slideDown();
+        setTwo();
     }
+
+    document.getElementById("score").innerText = score;
 }) 
 
 function filterZeros(row) {
