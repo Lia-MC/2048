@@ -55,15 +55,15 @@ document.addEventListener("keyup", (e) => {
     if (e.code == "ArrowLeft") {
         slideLeft();
     } 
-    // else if (e.code == "ArrowRight") {
-    //     slideRight();
-    // }
-    // else if (e.code == "ArrowUp") {
-    //     slideUp();
-    // }
-    // else if (e.code == "ArrowDown") {
-    //     slideDown();
-    // }
+    else if (e.code == "ArrowRight") {
+        slideRight();
+    }
+    else if (e.code == "ArrowUp") {
+        slideUp();
+    }
+    else if (e.code == "ArrowDown") {
+        slideDown();
+    }
 }) 
 
 function filterZeros(row) {
@@ -103,4 +103,56 @@ function slideLeft() {
             updateTile(tile, num);
         }
     } 
+}
+
+function slideRight() {
+    for (let r = 0; r < rows; r++) {
+        let cur_row = board[r];
+        cur_row.reverse();
+        cur_row = slide(cur_row);
+        cur_row.reverse();
+        board[r] = cur_row;
+
+        for (let c = 0; c < cols; c++) {
+            let tile = document.getElementById(r.toString() + "-" + c.toString());
+            let num = board[r][c];
+            updateTile(tile, num);
+        }
+    } 
+}
+
+function slideUp() {
+    for (let c = 0; c < cols; c++) {
+        let row = [board[0][c], board[1][c], board[2][c], board[3][c]];
+        row = slide(row);
+        board[0][c] = row[0];
+        board[1][c] = row[1];
+        board[2][c] = row[2];
+        board[3][c] = row[3];
+
+        for (let r = 0; r < rows; r++) {
+            let tile = document.getElementById(r.toString() + "-" + c.toString());
+            let num = board[r][c];
+            updateTile(tile, num);
+        }
+    }
+}
+
+function slideDown() {
+    for (let c = 0; c < cols; c++) {
+        let row = [board[0][c], board[1][c], board[2][c], board[3][c]];
+        row.reverse();
+        row = slide(row);
+        row.reverse();
+        board[0][c] = row[0];
+        board[1][c] = row[1];
+        board[2][c] = row[2];
+        board[3][c] = row[3];
+
+        for (let r = 0; r < rows; r++) {
+            let tile = document.getElementById(r.toString() + "-" + c.toString());
+            let num = board[r][c];
+            updateTile(tile, num);
+        }
+    }
 }
