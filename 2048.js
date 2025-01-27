@@ -79,20 +79,33 @@ function updateTile(tile, num) {
 // keyup = moment that the user let goes of the key
 // e is the event
 document.addEventListener("keyup", (e) => {
+    // initialboard = board;
     if (e.code == "ArrowLeft") {
         slideLeft();
+        // if (board != initialboard) {
+        //     setTwo();
+        // }
         setTwo();
     } 
     else if (e.code == "ArrowRight") {
         slideRight();
+        // if (board != initialboard) {
+        //     setTwo();
+        // }
         setTwo();
     }
     else if (e.code == "ArrowUp") {
         slideUp();
+        // if (board != initialboard) {
+        //     setTwo();
+        // }
         setTwo();
     }
     else if (e.code == "ArrowDown") {
         slideDown();
+        // if (board != initialboard) {
+        //     setTwo();
+        // }
         setTwo();
     }
     document.getElementById("score").innerText = score;
