@@ -42,6 +42,7 @@ function hasEmptyTile() {
 
 function setTwo() {
     if (!hasEmptyTile()) {
+        alert("Game Over. Thanks for playing!");
         return;
     }
 
@@ -50,7 +51,7 @@ function setTwo() {
         let r = Math.floor(Math.random() * rows);
         let c = Math.floor(Math.random() * cols);
 
-        if (board[r][c] == 0) {
+        if (board[r][c] == 0) { // this isnt working...
             board[r][c] = 2;
             let tile = document.getElementById(r.toString() + "-" + c.toString());
             tile.innerText = "2";
